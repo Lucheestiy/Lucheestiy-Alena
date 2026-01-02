@@ -1,0 +1,9 @@
+services:
+  web:
+    image: nginx:1.25-alpine
+    container_name: alena-landing
+    restart: unless-stopped
+    ports:
+      - "${ALENA_HOST_PORT:-8099}:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
